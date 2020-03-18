@@ -1,0 +1,1149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+
+  <link href="http://apidock.com/ruby/notes.rss" rel="alternate" title="All recent notes in Ruby" type="application/rss+xml" />
+  <link href="http://apidock.com/ruby/notes/good.rss" rel="alternate" title="Recent good notes in Ruby" type="application/rss+xml" />
+
+<link href="https://d3bro1z16yfjvi.cloudfront.net/stylesheets/main_site.css?1491093777" media="screen" rel="stylesheet" type="text/css" />
+<link href="https://d3bro1z16yfjvi.cloudfront.net/stylesheets/application.css?1491093758" media="screen" rel="stylesheet" type="text/css" />
+<link href="https://d3bro1z16yfjvi.cloudfront.net/stylesheets/syntax.css?1349367920" media="screen" rel="stylesheet" type="text/css" />
+<script src="https://ajax.googleapis.com/ajax/libs/prototype/1.6.0.3/prototype.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/scriptaculous/1.8.1/effects.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/scriptaculous/1.8.1/controls.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/scriptaculous/1.8.1/dragdrop.js" type="text/javascript"></script>
+
+<script src="https://d3bro1z16yfjvi.cloudfront.net/javascripts/searchdata/ruby.js?1558090273" type="text/javascript"></script>
+
+<script src="https://d3bro1z16yfjvi.cloudfront.net/javascripts/search.js?1349367920" type="text/javascript"></script>
+<title>strftime (DateTime) - APIdock</title>
+    <link href="https://d3bro1z16yfjvi.cloudfront.net/stylesheets/documentation.css?1491093767" media="screen" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div id="body2">
+      <div id="header">
+  <a href="/" id="apidock_logo"><img alt="Apidock_header" src="https://d3bro1z16yfjvi.cloudfront.net/images/apidock_header.png?1349367920" /></a>
+  <div id="apidock_nav">
+    <ul>
+  <li class="first_tab"><a href="/">Welcome</a></li>
+  <li><a href="/register">Register</a></li>
+  <li><a href="/projects">Projects</a></li>
+  <li><a href="/faq">Help</a></li>
+  <li><a href="/about">About</a></li>
+  <li class="external"><a href="http://blog.nodeta.fi/category/apidock/">Blog</a></li>
+</ul>
+
+  </div>
+  
+  <div id="header_right" class="header_login">
+    <form action="/login" method="post">
+      <a href="#" id="openid_header_link" onclick="Element.toggle(&quot;default_header_login&quot;);
+Element.toggle(&quot;openid_header_login&quot;);
+var openid_link = $('openid_header_link');
+if (openid_link.innerHTML == 'Use login / password') {
+openid_link.update('Use OpenID');
+$(&quot;login&quot;).activate();
+} else {
+openid_link.update('Use login / password');
+$(&quot;openid_url&quot;).activate();
+}; return false;">Use OpenID</a>
+      <span id="default_header_login">
+        <label for="login">Login</label>
+        <input id="login" name="login[login]" size="30" type="text" />
+        <label for="password">Password</label>
+        <input id="password" name="login[password]" size="30" type="password" />
+      </span>
+      <span id="openid_header_login" style="display:none;">
+        <label for="openid_url">OpenID URL</label>
+        <input id="openid_url" name="openid_url" type="text" />
+      </span>
+      <label for="login_remember_me">Remember me</label><input name="login[remember_me]" type="hidden" value="0" /><input id="login_remember_me" name="login[remember_me]" type="checkbox" value="1" />
+      <input src="https://d3bro1z16yfjvi.cloudfront.net/images/submit_login.png?1349367920" type="image" /> 
+    </form>
+  </div>
+
+</div>
+<div id="navigation" style="background-color:#851511;">
+  <ul>
+    <li class="first_tab"><a href="/rspec" onclick="
+          var value = $('nav_search_field').value;
+          if (fieldFocus == true &amp;&amp; value.length != 0) {
+            top.location = '/rspec?q=' + value;
+          } else {
+            top.location = '/rspec';
+          }; return false;"><img alt="Rspec_icon_16" src="https://d3bro1z16yfjvi.cloudfront.net/images/rspec_icon_16.png?1349367920" />RSpec</a></li>
+<li><a href="/rails" onclick="
+          var value = $('nav_search_field').value;
+          if (fieldFocus == true &amp;&amp; value.length != 0) {
+            top.location = '/rails?q=' + value;
+          } else {
+            top.location = '/rails';
+          }; return false;"><img alt="Rails_icon_16" src="https://d3bro1z16yfjvi.cloudfront.net/images/rails_icon_16.png?1349367920" />Ruby on Rails</a></li>
+<li id="current"><a href="/ruby" onclick="
+          var value = $('nav_search_field').value;
+          if (fieldFocus == true &amp;&amp; value.length != 0) {
+            top.location = '/ruby?q=' + value;
+          } else {
+            top.location = '/ruby';
+          }; return false;"><img alt="Ruby_icon_16" src="https://d3bro1z16yfjvi.cloudfront.net/images/ruby_icon_16.png?1349367920" />Ruby</a></li>
+
+  </ul>
+
+  <div id="nav_search">
+    <form action="/ruby/DateTime/strftime" method="post" onSubmit="return false;">
+      <input autocomplete="off" id="nav_search_field" name="nav_search_field" type="text" />
+      <a class="img_link" href="#" id="submit_nav_search" onclick="window.location.href = '/ruby/search?query=' + escape($F('nav_search_field'));; return false;"></a>
+    </form>
+  </div>
+</div>
+<ul id="search_results" style="display:none;">
+  <li></li>
+</ul>
+
+      <div id="content_wrapper">
+        <!-- @flowdock -->
+        <a id="flowdock-tab" title="The group chat tool for software developers from the guys behind APIdock" href="http://flowdock.com/tour/developers?source=apidock">Flowdock</a>
+        <!-- @flowdock -->
+        <div id="content" class="clearfix">
+          
+
+          <div id="docs_container">
+             
+<div id="docs_header">
+  <div id="title" class="clearfix">
+    <div id="title_prefix_method" class="title_prefix">
+      <span>method</span>
+    </div>
+    <div id="title_name">
+      <h1>strftime</h1>
+    </div>
+    <img alt="Importance_5" class="importance" src="https://d3bro1z16yfjvi.cloudfront.net/images/importance_5.png?1349367920" title="Very extensive documentation" />
+  </div>
+  <div id="docs_info">
+
+      <strong>Ruby latest stable</strong> (v2_5_5)
+ - 
+    <a href="#" onclick="var notes = $('notes');
+scroll(0, notes.cumulativeOffset().top);; return false;">6 notes</a> - 
+    Class: <span><a href="/ruby/DateTime">DateTime</a></span>
+
+    <div id="timeline" class="clearfix">
+  <ul>
+    
+                      <li>
+        <a href="/ruby/v1_8_6_287/DateTime/strftime" title="1_8_6_287"><span class='label'>1_8_6_287</span>
+          <span class='diff' style='height:0%;'>(0)</span></a>
+        
+            </li>   
+    
+                      <li>
+        <a href="/ruby/v1_8_7_72/DateTime/strftime" title="1_8_7_72"><span class='label'>1_8_7_72</span>
+          <span class='diff' style='height:0%;'>(0)</span></a>
+        
+            </li>   
+    
+                      <li>
+        <a href="/ruby/v1_8_7_330/DateTime/strftime" title="1_8_7_330"><span class='label'>1_8_7_330</span>
+          <span class='diff' style='height:0%;'>(0)</span></a>
+        
+            </li>   
+    
+                      <li>
+        <a href="/ruby/v1_9_1_378/DateTime/strftime" title="1_9_1_378"><span class='label'>1_9_1_378</span>
+          <span class='diff' style='height:0%;'>(0)</span></a>
+        
+            </li>   
+    
+                      <li>
+        <a href="/ruby/v1_9_2_180/DateTime/strftime" title="1_9_2_180"><span class='label'>1_9_2_180</span>
+          <span class='diff' style='height:0%;'>(0)</span></a>
+        
+            </li>   
+    
+                      <li class='positive'>
+        <a href="/ruby/v1_9_3_125/DateTime/strftime" title="1_9_3_125"><span class='label'>1_9_3_125</span>
+          <span class='diff' style='height:38%;'>(38)</span></a>
+        
+            </li>   
+    
+                      <li>
+        <a href="/ruby/v1_9_3_392/DateTime/strftime" title="1_9_3_392"><span class='label'>1_9_3_392</span>
+          <span class='diff' style='height:0%;'>(0)</span></a>
+        
+            </li>   
+    
+                      <li class='positive'>
+        <a href="/ruby/v2_1_10/DateTime/strftime" title="2_1_10"><span class='label'>2_1_10</span>
+          <span class='diff' style='height:1%;'>(1)</span></a>
+        
+            </li>   
+    
+                      <li>
+        <a href="/ruby/v2_2_9/DateTime/strftime" title="2_2_9"><span class='label'>2_2_9</span>
+          <span class='diff' style='height:0%;'>(0)</span></a>
+        
+            </li>   
+    
+                      <li>
+        <a href="/ruby/v2_4_6/DateTime/strftime" title="2_4_6"><span class='label'>2_4_6</span>
+          <span class='diff' style='height:0%;'>(0)</span></a>
+        
+            </li>   
+    
+                      <li class='current '>
+        <a href="/ruby/v2_5_5/DateTime/strftime" title="2_5_5"><span class='label'>2_5_5</span>
+          <span class='diff' style='height:0%;'>(0)</span></a>
+        
+            </li>   
+    
+                      <li>
+        <a href="/ruby/v2_6_3/DateTime/strftime" title="2_6_3"><span class='label'>2_6_3</span>
+          <span class='diff' style='height:0%;'>(0)</span></a>
+        
+            </li>   
+    
+    <li id="help">
+      <a href="/faq#What-is-the-bar-graph-on-the-top-of-documentation-pages" class="info">What's this?</a>
+    </li>
+  </ul>
+</div>
+
+
+  </div>
+</div>
+<div id="related">
+  <div id="related_title"><h3>Related methods</h3></div>
+  <ul>
+ 
+    
+  <li class="related_header">Class methods (21)</li>
+  
+<li>
+  <img alt="Importance_1_sm" class="importance" src="https://d3bro1z16yfjvi.cloudfront.net/images/importance_1_sm.png?1349367920" title="Some documentation" />  <a href="/ruby/v2_5_5/DateTime/civil/class">civil</a>  		
+    
+    
+</li>
+
+<li>
+  <img alt="Importance_1_sm" class="importance" src="https://d3bro1z16yfjvi.cloudfront.net/images/importance_1_sm.png?1349367920" title="Some documentation" />  <a href="/ruby/v2_5_5/DateTime/commercial/class">commercial</a>  		
+    
+    
+</li>
+
+<li>
+  <img alt="Importance_1_sm" class="importance" src="https://d3bro1z16yfjvi.cloudfront.net/images/importance_1_sm.png?1349367920" title="Some documentation" />  <a href="/ruby/v2_5_5/DateTime/httpdate/class">httpdate</a>  		
+    
+    
+</li>
+
+<li>
+  <img alt="Importance_1_sm" class="importance" src="https://d3bro1z16yfjvi.cloudfront.net/images/importance_1_sm.png?1349367920" title="Some documentation" />  <a href="/ruby/v2_5_5/DateTime/iso8601/class">iso8601</a>  		
+    
+    
+</li>
+
+<li>
+  <img alt="Importance_1_sm" class="importance" src="https://d3bro1z16yfjvi.cloudfront.net/images/importance_1_sm.png?1349367920" title="Some documentation" />  <a href="/ruby/v2_5_5/DateTime/jd/class">jd</a>  		
+    
+    
+</li>
+
+<li>
+  <img alt="Importance_1_sm" class="importance" src="https://d3bro1z16yfjvi.cloudfront.net/images/importance_1_sm.png?1349367920" title="Some documentation" />  <a href="/ruby/v2_5_5/DateTime/jisx0301/class">jisx0301</a>  		
+    
+    
+</li>
+
+<li>
+  <img alt="Importance_1_sm" class="importance" src="https://d3bro1z16yfjvi.cloudfront.net/images/importance_1_sm.png?1349367920" title="Some documentation" />  <a href="/ruby/v2_5_5/DateTime/json_create/class">json_create</a>  		
+    
+    
+</li>
+
+<li>
+  <img alt="Importance_1_sm" class="importance" src="https://d3bro1z16yfjvi.cloudfront.net/images/importance_1_sm.png?1349367920" title="Some documentation" />  <a href="/ruby/v2_5_5/DateTime/new/class">new</a>  		
+    
+    
+</li>
+
+<li class='deprecated'>
+  <img alt="Importance_0_sm" class="importance" src="https://d3bro1z16yfjvi.cloudfront.net/images/importance_0_sm.png?1349367920" title="No documentation" />  <a href="/ruby/v1_9_2_180/DateTime/new_by_frags/class">new_by_frags</a>  		
+    <img alt="Icon_private_sm" src="https://d3bro1z16yfjvi.cloudfront.net/images/icon_private_sm.png?1349367920" title="private" />
+    
+    <span class="info">(<= v1_9_2_180)</span>
+  
+</li>
+
+<li>
+  <img alt="Importance_1_sm" class="importance" src="https://d3bro1z16yfjvi.cloudfront.net/images/importance_1_sm.png?1349367920" title="Some documentation" />  <a href="/ruby/v2_5_5/DateTime/now/class">now</a>  		
+    
+    
+</li>
+
+<li class='newer'>
+  <img alt="Importance_0_sm" class="importance" src="https://d3bro1z16yfjvi.cloudfront.net/images/importance_0_sm.png?1349367920" title="No documentation" />  <a href="/ruby/v1_9_1_378/DateTime/nth_kday/class">nth_kday</a>  		
+    <img alt="Icon_private_sm" src="https://d3bro1z16yfjvi.cloudfront.net/images/icon_private_sm.png?1349367920" title="private" />
+    
+    <span class="info">(>= v1_9_1_378)</span>
+  
+</li>
+
+<li>
+  <img alt="Importance_1_sm" class="importance" src="https://d3bro1z16yfjvi.cloudfront.net/images/importance_1_sm.png?1349367920" title="Some documentation" />  <a href="/ruby/v2_5_5/DateTime/ordinal/class">ordinal</a>  		
+    
+    
+</li>
+
+<li>
+  <img alt="Importance_2_sm" class="importance" src="https://d3bro1z16yfjvi.cloudfront.net/images/importance_2_sm.png?1349367920" title="Moderate documentation" />  <a href="/ruby/v2_5_5/DateTime/parse/class">parse</a>  		
+    
+    
+</li>
+
+<li>
+  <img alt="Importance_1_sm" class="importance" src="https://d3bro1z16yfjvi.cloudfront.net/images/importance_1_sm.png?1349367920" title="Some documentation" />  <a href="/ruby/v2_5_5/DateTime/rfc2822/class">rfc2822</a>  		
+    
+    
+</li>
+
+<li>
+  <img alt="Importance_1_sm" class="importance" src="https://d3bro1z16yfjvi.cloudfront.net/images/importance_1_sm.png?1349367920" title="Some documentation" />  <a href="/ruby/v2_5_5/DateTime/rfc3339/class">rfc3339</a>  		
+    
+    
+</li>
+
+<li>
+  <img alt="Importance_1_sm" class="importance" src="https://d3bro1z16yfjvi.cloudfront.net/images/importance_1_sm.png?1349367920" title="Some documentation" />  <a href="/ruby/v2_5_5/DateTime/rfc822/class">rfc822</a>  		
+    
+    
+</li>
+
+<li>
+  <img alt="Importance_2_sm" class="importance" src="https://d3bro1z16yfjvi.cloudfront.net/images/importance_2_sm.png?1349367920" title="Moderate documentation" />  <a href="/ruby/v2_5_5/DateTime/strptime/class">strptime</a>  		
+    
+    
+</li>
+
+<li>
+  <img alt="Importance_1_sm" class="importance" src="https://d3bro1z16yfjvi.cloudfront.net/images/importance_1_sm.png?1349367920" title="Some documentation" />  <a href="/ruby/v2_5_5/DateTime/_strptime/class">_strptime</a>  		
+    
+    
+</li>
+
+<li class='deprecated'>
+  <img alt="Importance_1_sm" class="importance" src="https://d3bro1z16yfjvi.cloudfront.net/images/importance_1_sm.png?1349367920" title="Some documentation" />  <a href="/ruby/v1_9_2_180/DateTime/today/class">today</a>  		
+    <img alt="Icon_private_sm" src="https://d3bro1z16yfjvi.cloudfront.net/images/icon_private_sm.png?1349367920" title="private" />
+    
+    <span class="info">(<= v1_9_2_180)</span>
+  
+</li>
+
+<li class='newer'>
+  <img alt="Importance_0_sm" class="importance" src="https://d3bro1z16yfjvi.cloudfront.net/images/importance_0_sm.png?1349367920" title="No documentation" />  <a href="/ruby/v1_8_6_287/DateTime/weeknum/class">weeknum</a>  		
+    <img alt="Icon_private_sm" src="https://d3bro1z16yfjvi.cloudfront.net/images/icon_private_sm.png?1349367920" title="private" />
+    
+    <span class="info">(>= v1_8_6_287)</span>
+  
+</li>
+
+<li>
+  <img alt="Importance_1_sm" class="importance" src="https://d3bro1z16yfjvi.cloudfront.net/images/importance_1_sm.png?1349367920" title="Some documentation" />  <a href="/ruby/v2_5_5/DateTime/xmlschema/class">xmlschema</a>  		
+    
+    
+</li>
+
+
+  <li class="related_header">Instance methods (22)</li>
+  
+<li>
+  <img alt="Importance_1_sm" class="importance" src="https://d3bro1z16yfjvi.cloudfront.net/images/importance_1_sm.png?1349367920" title="Some documentation" />  <a href="/ruby/v2_5_5/DateTime/as_json">as_json</a>  		
+    
+    
+</li>
+
+<li class='newer'>
+  <img alt="Importance_1_sm" class="importance" src="https://d3bro1z16yfjvi.cloudfront.net/images/importance_1_sm.png?1349367920" title="Some documentation" />  <a href="/ruby/v2_6_3/DateTime/hour">hour</a>  		
+    
+    
+    <span class="info">(>= v2_6_3)</span>
+  
+</li>
+
+<li>
+  <img alt="Importance_1_sm" class="importance" src="https://d3bro1z16yfjvi.cloudfront.net/images/importance_1_sm.png?1349367920" title="Some documentation" />  <a href="/ruby/v2_5_5/DateTime/iso8601">iso8601</a>  		
+    
+    
+</li>
+
+<li class='deprecated'>
+  <img alt="Importance_0_sm" class="importance" src="https://d3bro1z16yfjvi.cloudfront.net/images/importance_0_sm.png?1349367920" title="No documentation" />  <a href="/ruby/v1_9_2_180/DateTime/iso8601_timediv">iso8601_timediv</a>  		
+    <img alt="Icon_private_sm" src="https://d3bro1z16yfjvi.cloudfront.net/images/icon_private_sm.png?1349367920" title="private" />
+    
+    <span class="info">(<= v1_9_2_180)</span>
+  
+</li>
+
+<li>
+  <img alt="Importance_1_sm" class="importance" src="https://d3bro1z16yfjvi.cloudfront.net/images/importance_1_sm.png?1349367920" title="Some documentation" />  <a href="/ruby/v2_5_5/DateTime/jisx0301">jisx0301</a>  		
+    
+    
+</li>
+
+<li class='newer'>
+  <img alt="Importance_1_sm" class="importance" src="https://d3bro1z16yfjvi.cloudfront.net/images/importance_1_sm.png?1349367920" title="Some documentation" />  <a href="/ruby/v2_6_3/DateTime/min">min</a>  		
+    
+    
+    <span class="info">(>= v2_6_3)</span>
+  
+</li>
+
+<li class='newer'>
+  <img alt="Importance_1_sm" class="importance" src="https://d3bro1z16yfjvi.cloudfront.net/images/importance_1_sm.png?1349367920" title="Some documentation" />  <a href="/ruby/v2_6_3/DateTime/minute">minute</a>  		
+    
+    
+    <span class="info">(>= v2_6_3)</span>
+  
+</li>
+
+<li class='newer'>
+  <img alt="Importance_1_sm" class="importance" src="https://d3bro1z16yfjvi.cloudfront.net/images/importance_1_sm.png?1349367920" title="Some documentation" />  <a href="/ruby/v2_6_3/DateTime/new_offset">new_offset</a>  		
+    
+    
+    <span class="info">(>= v2_6_3)</span>
+  
+</li>
+
+<li class='newer'>
+  <img alt="Importance_1_sm" class="importance" src="https://d3bro1z16yfjvi.cloudfront.net/images/importance_1_sm.png?1349367920" title="Some documentation" />  <a href="/ruby/v2_6_3/DateTime/offset">offset</a>  		
+    
+    
+    <span class="info">(>= v2_6_3)</span>
+  
+</li>
+
+<li>
+  <img alt="Importance_1_sm" class="importance" src="https://d3bro1z16yfjvi.cloudfront.net/images/importance_1_sm.png?1349367920" title="Some documentation" />  <a href="/ruby/v2_5_5/DateTime/rfc3339">rfc3339</a>  		
+    
+    
+</li>
+
+<li class='newer'>
+  <img alt="Importance_1_sm" class="importance" src="https://d3bro1z16yfjvi.cloudfront.net/images/importance_1_sm.png?1349367920" title="Some documentation" />  <a href="/ruby/v2_6_3/DateTime/sec">sec</a>  		
+    
+    
+    <span class="info">(>= v2_6_3)</span>
+  
+</li>
+
+<li class='newer'>
+  <img alt="Importance_1_sm" class="importance" src="https://d3bro1z16yfjvi.cloudfront.net/images/importance_1_sm.png?1349367920" title="Some documentation" />  <a href="/ruby/v2_6_3/DateTime/sec_fraction">sec_fraction</a>  		
+    
+    
+    <span class="info">(>= v2_6_3)</span>
+  
+</li>
+
+<li class='newer'>
+  <img alt="Importance_1_sm" class="importance" src="https://d3bro1z16yfjvi.cloudfront.net/images/importance_1_sm.png?1349367920" title="Some documentation" />  <a href="/ruby/v2_6_3/DateTime/second">second</a>  		
+    
+    
+    <span class="info">(>= v2_6_3)</span>
+  
+</li>
+
+<li class='newer'>
+  <img alt="Importance_1_sm" class="importance" src="https://d3bro1z16yfjvi.cloudfront.net/images/importance_1_sm.png?1349367920" title="Some documentation" />  <a href="/ruby/v2_6_3/DateTime/second_fraction">second_fraction</a>  		
+    
+    
+    <span class="info">(>= v2_6_3)</span>
+  
+</li>
+
+<li>
+  <img alt="Importance_5_sm" class="importance" src="https://d3bro1z16yfjvi.cloudfront.net/images/importance_5_sm.png?1349367920" title="Very extensive documentation" />  <a href="/ruby/v2_5_5/DateTime/strftime">strftime</a>  		
+    
+    
+</li>
+
+<li>
+  <img alt="Importance_1_sm" class="importance" src="https://d3bro1z16yfjvi.cloudfront.net/images/importance_1_sm.png?1349367920" title="Some documentation" />  <a href="/ruby/v2_5_5/DateTime/to_date">to_date</a>  		
+    
+    
+</li>
+
+<li>
+  <img alt="Importance_1_sm" class="importance" src="https://d3bro1z16yfjvi.cloudfront.net/images/importance_1_sm.png?1349367920" title="Some documentation" />  <a href="/ruby/v2_5_5/DateTime/to_datetime">to_datetime</a>  		
+    
+    
+</li>
+
+<li>
+  <img alt="Importance_1_sm" class="importance" src="https://d3bro1z16yfjvi.cloudfront.net/images/importance_1_sm.png?1349367920" title="Some documentation" />  <a href="/ruby/v2_5_5/DateTime/to_json">to_json</a>  		
+    
+    
+</li>
+
+<li>
+  <img alt="Importance_2_sm" class="importance" src="https://d3bro1z16yfjvi.cloudfront.net/images/importance_2_sm.png?1349367920" title="Moderate documentation" />  <a href="/ruby/v2_5_5/DateTime/to_s">to_s</a>  		
+    
+    
+</li>
+
+<li>
+  <img alt="Importance_1_sm" class="importance" src="https://d3bro1z16yfjvi.cloudfront.net/images/importance_1_sm.png?1349367920" title="Some documentation" />  <a href="/ruby/v2_5_5/DateTime/to_time">to_time</a>  		
+    
+    
+</li>
+
+<li>
+  <img alt="Importance_1_sm" class="importance" src="https://d3bro1z16yfjvi.cloudfront.net/images/importance_1_sm.png?1349367920" title="Some documentation" />  <a href="/ruby/v2_5_5/DateTime/xmlschema">xmlschema</a>  		
+    
+    
+</li>
+
+<li class='newer'>
+  <img alt="Importance_1_sm" class="importance" src="https://d3bro1z16yfjvi.cloudfront.net/images/importance_1_sm.png?1349367920" title="Some documentation" />  <a href="/ruby/v2_6_3/DateTime/zone">zone</a>  		
+    
+    
+    <span class="info">(>= v2_6_3)</span>
+  
+</li>
+
+
+
+  </ul>
+  <p class="legend">
+    <img alt="Icon_private_sm" src="https://d3bro1z16yfjvi.cloudfront.net/images/icon_private_sm.png?1349367920" /> = private<br />
+    <img alt="Icon_protected_sm" src="https://d3bro1z16yfjvi.cloudfront.net/images/icon_protected_sm.png?1349367920" /> = protected
+  </p>
+</div>
+
+<div id="docs_body">
+  
+
+
+  <code><strong>strftime</strong>(*args)</code>
+  <em>public</em>
+  <div class="description">
+    
+    
+<p>Formats date according to the directives in the given format string. The
+directives begin with a percent (%) character. Any text not listed as a
+directive will be passed through to the output string.</p>
+
+<p>A directive consists of a percent (%) character, zero or more flags, an
+optional minimum field width, an optional modifier, and a conversion
+specifier as follows.</p>
+
+<pre><span class="punct">%&lt;</span><span class="string">flags</span><span class="punct">&gt;&lt;</span><span class="ident">width</span><span class="punct">&gt;&lt;</span><span class="ident">modifier</span><span class="punct">&gt;&lt;</span><span class="ident">conversion</span><span class="punct">&gt;</span>
+</pre>
+
+<p>Flags:</p>
+
+<pre><span class="punct">-</span>  <span class="ident">don</span><span class="punct">'</span><span class="string">t pad a numerical output.
+_  use spaces for padding.
+0  use zeros for padding.
+^  upcase the result string.
+#  change case.
+:  use colons for %z.<span class="normal">
+</span></span></pre>
+
+<p>The minimum field width specifies the minimum width.</p>
+
+<p>The modifiers are “E” and “O”. They are ignored.</p>
+
+<p><a href="/ruby/Gem/Format">Format</a> directives:</p>
+
+<pre><span class="constant"><a href="/ruby/Date">Date</a></span> <span class="punct">(</span><span class="constant">Year</span><span class="punct">,</span> <span class="constant">Month</span><span class="punct">,</span> <span class="constant">Day</span><span class="punct">):</span>
+  <span class="punct">%</span><span class="constant">Y</span> <span class="punct">-</span> <span class="constant">Year</span> <span class="ident">with</span> <span class="ident">century</span> <span class="punct">(</span><span class="ident">can</span> <span class="ident">be</span> <span class="ident">negative</span><span class="punct">,</span> <span class="number">4</span> <span class="ident">digits</span> <span class="ident">at</span> <span class="ident">least</span><span class="punct">)</span>
+          <span class="punct">-</span><span class="number">0001</span><span class="punct">,</span> <span class="number">0000</span><span class="punct">,</span> <span class="number">1995</span><span class="punct">,</span> <span class="number">2009</span><span class="punct">,</span> <span class="number">14292</span><span class="punct">,</span> <span class="ident">etc</span><span class="punct">.</span>
+  <span class="punct">%</span><span class="ident">C</span> <span class="punct">-</span> <span class="ident">year</span> <span class="punct">/</span> <span class="number">100</span> <span class="punct">(</span><span class="ident">round</span> <span class="ident">down</span><span class="punct">.</span>  <span class="number">20</span> <span class="ident">in</span> <span class="number">2009</span><span class="punct">)</span>
+  <span class="punct">%</span><span class="ident">y</span> <span class="punct">-</span> <span class="ident">year</span> <span class="punct">%</span> <span class="number">100</span> <span class="punct">(</span><span class="number">00</span><span class="punct">..</span><span class="number">99</span><span class="punct">)</span>
+
+  <span class="punct">%</span><span class="ident">m</span> <span class="punct">-</span> <span class="constant">Month</span> <span class="ident">of</span> <span class="ident">the</span> <span class="ident">year</span><span class="punct">,</span> <span class="ident">zero</span><span class="punct">-</span><span class="ident">padded</span> <span class="punct">(</span><span class="number">01</span><span class="punct">..</span><span class="number">12</span><span class="punct">)</span>
+          <span class="punct">%_</span><span class="string">m  blank-padded ( 1..12)
+          %-m  no-padded (1..12)
+  %B - The full month name (``January'')
+          %^B  uppercased (``JANUARY'')
+  %b - The abbreviated month name (``Jan'')
+          %^b  uppercased (``JAN'')
+  %h - Equivalent to %b
+
+  %d - Day of the month, zero-padded (01..31)
+          %-d  no-padded (1..31)
+  %e - Day of the month, blank-padded ( 1..31)
+
+  %j - Day of the year (001..366)
+
+Time (Hour, Minute, Second, Subsecond):
+  %H - Hour of the day, 24-hour clock, zero-padded (00..23)
+  %k - Hour of the day, 24-hour clock, blank-padded ( 0..23)
+  %I - Hour of the day, 12-hour clock, zero-padded (01..12)
+  %l - Hour of the day, 12-hour clock, blank-padded ( 1..12)
+  %P - Meridian indicator, lowercase (``am'' or ``pm'')
+  %p - Meridian indicator, uppercase (``AM'' or ``PM'')
+
+  %M - Minute of the hour (00..59)
+
+  %S - Second of the minute (00..59)
+
+  %L - Millisecond of the second (000..999)
+  %N - Fractional seconds digits, default is 9 digits (nanosecond)
+          %3N  millisecond (3 digits)   %15N femtosecond (15 digits)
+          %6N  microsecond (6 digits)   %18N attosecond  (18 digits)
+          %9N  nanosecond  (9 digits)   %21N zeptosecond (21 digits)
+          %12N picosecond (12 digits)   %24N yoctosecond (24 digits)
+
+Time zone:
+  %z - Time zone as hour and minute offset from UTC (e.g. +0900)
+          %:z - hour and minute offset from UTC with a colon (e.g. +09:00)
+          %::z - hour, minute and second offset from UTC (e.g. +09:00:00)
+          %:::z - hour, minute and second offset from UTC
+                                            (e.g. +09, +09:30, +09:30:30)
+  %Z - Equivalent to %:z (e.g. +09:00)
+
+Weekday:
+  %A - The full weekday name (``Sunday'')
+          %^A  uppercased (``SUNDAY'')
+  %a - The abbreviated name (``Sun'')
+          %^a  uppercased (``SUN'')
+  %u - Day of the week (Monday is 1, 1..7)
+  %w - Day of the week (Sunday is 0, 0..6)
+
+ISO 8601 week-based year and week number:
+The week 1 of YYYY starts with a Monday and includes YYYY-01-04.
+The days in the year before the first week are in the last week of
+the previous year.
+  %G - The week-based year
+  %g - The last 2 digits of the week-based year (00..99)
+  %V - Week number of the week-based year (01..53)
+
+Week number:
+The week 1 of YYYY starts with a Sunday or Monday (according to %U
+or %W).  The days in the year before the first week are in week 0.
+  %U - Week number of the year.  The week starts with Sunday.  (00..53)
+  %W - Week number of the year.  The week starts with Monday.  (00..53)
+
+Seconds since the Unix Epoch:
+  %s - Number of seconds since 1970-01-01 00:00:00 UTC.
+  %Q - Number of milliseconds since 1970-01-01 00:00:00 UTC.
+
+Literal string:
+  %n - Newline character (<span class="escape">\n</span>)
+  %t - Tab character (<span class="escape">\t</span>)
+  %% - Literal ``%'' character
+
+Combination:
+  %c - date and time (%a %b %e %T %Y)
+  %D - Date (%m/%d/%y)
+  %F - The ISO 8601 date format (%Y-%m-%d)
+  %v - VMS date (%e-%b-%Y)
+  %x - Same as %D
+  %X - Same as %T
+  %r - 12-hour time (%I:%M:%S %p)
+  %R - 24-hour time (%H:%M)
+  %T - 24-hour time (%H:%M:%S)
+  %+ - date(1) (%a %b %e %H:%M:%S %Z %Y)<span class="normal">
+</span></span></pre>
+
+<p>This method is similar to the <a
+href="/ruby/DateTime/strftime">strftime</a>() function defined in ISO C and
+POSIX. Several directives (%a, %A, %b, %B, %c, %p, %r, %x, %X, %E*, %O* and
+%Z) are locale dependent in the function. However, this method is locale
+independent. So, the result may differ even if the same format string is
+used in other systems such as C. It is good practice to avoid %x and %X
+because there are corresponding locale independent representations, %D and
+%T.</p>
+
+<p>Examples:</p>
+
+<pre><span class="ident">d</span> <span class="punct">=</span> <span class="constant"><a href="/ruby/DateTime">DateTime</a></span><span class="punct">.</span><span class="ident"><a href="/ruby/DateTime/new/class">new</a></span><span class="punct">(</span><span class="number">2007</span><span class="punct">,</span><span class="number">11</span><span class="punct">,</span><span class="number">19</span><span class="punct">,</span><span class="number">8</span><span class="punct">,</span><span class="number">37</span><span class="punct">,</span><span class="number">48</span><span class="punct">,&quot;</span><span class="string">-06:00</span><span class="punct">&quot;)</span>
+                          <span class="comment">#=&gt; #&lt;DateTime: 2007-11-19T08:37:48-0600 ...&gt;</span>
+<span class="ident">d</span><span class="punct">.</span><span class="ident"><a href="/ruby/DateTime/strftime">strftime</a></span><span class="punct">(&quot;</span><span class="string">Printed on %m/%d/%Y</span><span class="punct">&quot;)</span>   <span class="comment">#=&gt; &quot;Printed on 11/19/2007&quot;</span>
+<span class="ident">d</span><span class="punct">.</span><span class="ident"><a href="/ruby/DateTime/strftime">strftime</a></span><span class="punct">(&quot;</span><span class="string">at %I:%M%p</span><span class="punct">&quot;)</span>            <span class="comment">#=&gt; &quot;at 08:37AM&quot;</span>
+</pre>
+
+<p>Various ISO 8601 formats:</p>
+
+<pre><span class="punct">%</span><span class="constant">Y</span><span class="punct">%</span><span class="ident">m</span><span class="punct">%</span><span class="ident">d</span>           <span class="punct">=&gt;</span> <span class="number">20071119</span>                  <span class="constant">Calendar</span> <span class="ident">date</span> <span class="punct">(</span><span class="ident">basic</span><span class="punct">)</span>
+<span class="punct">%</span><span class="constant">F</span>               <span class="punct">=&gt;</span> <span class="number">2007</span><span class="punct">-</span><span class="number">11</span><span class="punct">-</span><span class="number">19</span>                <span class="constant">Calendar</span> <span class="ident">date</span> <span class="punct">(</span><span class="ident">extended</span><span class="punct">)</span>
+<span class="punct">%</span><span class="constant">Y</span><span class="punct">-%</span><span class="ident">m</span>            <span class="punct">=&gt;</span> <span class="number">2007</span><span class="punct">-</span><span class="number">11</span>                   <span class="constant">Calendar</span> <span class="ident">date</span><span class="punct">,</span> <span class="ident">reduced</span> <span class="ident">accuracy</span><span class="punct">,</span> <span class="ident">specific</span> <span class="ident">month</span>
+<span class="punct">%</span><span class="constant">Y</span>               <span class="punct">=&gt;</span> <span class="number">2007</span>                      <span class="constant">Calendar</span> <span class="ident">date</span><span class="punct">,</span> <span class="ident">reduced</span> <span class="ident">accuracy</span><span class="punct">,</span> <span class="ident">specific</span> <span class="ident">year</span>
+<span class="punct">%</span><span class="constant">C</span>               <span class="punct">=&gt;</span> <span class="number">20</span>                        <span class="constant">Calendar</span> <span class="ident">date</span><span class="punct">,</span> <span class="ident">reduced</span> <span class="ident">accuracy</span><span class="punct">,</span> <span class="ident">specific</span> <span class="ident">century</span>
+<span class="punct">%</span><span class="constant">Y</span><span class="punct">%</span><span class="ident">j</span>             <span class="punct">=&gt;</span> <span class="number">2007323</span>                   <span class="constant">Ordinal</span> <span class="ident">date</span> <span class="punct">(</span><span class="ident">basic</span><span class="punct">)</span>
+<span class="punct">%</span><span class="constant">Y</span><span class="punct">-%</span><span class="ident">j</span>            <span class="punct">=&gt;</span> <span class="number">2007</span><span class="punct">-</span><span class="number">323</span>                  <span class="constant">Ordinal</span> <span class="ident">date</span> <span class="punct">(</span><span class="ident">extended</span><span class="punct">)</span>
+<span class="punct">%</span><span class="constant">GW</span><span class="punct">%</span><span class="constant">V</span><span class="punct">%</span><span class="ident">u</span>          <span class="punct">=&gt;</span> <span class="number">2007</span><span class="constant">W471</span>                  <span class="constant">Week</span> <span class="ident">date</span> <span class="punct">(</span><span class="ident">basic</span><span class="punct">)</span>
+<span class="punct">%</span><span class="constant">G</span><span class="punct">-</span><span class="constant">W</span><span class="punct">%</span><span class="constant">V</span><span class="punct">-%</span><span class="ident">u</span>        <span class="punct">=&gt;</span> <span class="number">2007</span><span class="punct">-</span><span class="constant">W47</span><span class="punct">-</span><span class="number">1</span>                <span class="constant">Week</span> <span class="ident">date</span> <span class="punct">(</span><span class="ident">extended</span><span class="punct">)</span>
+<span class="punct">%</span><span class="constant">GW</span><span class="punct">%</span><span class="constant">V</span>            <span class="punct">=&gt;</span> <span class="number">2007</span><span class="constant">W47</span>                   <span class="constant">Week</span> <span class="ident">date</span><span class="punct">,</span> <span class="ident">reduced</span> <span class="ident">accuracy</span><span class="punct">,</span> <span class="ident">specific</span> <span class="ident">week</span> <span class="punct">(</span><span class="ident">basic</span><span class="punct">)</span>
+<span class="punct">%</span><span class="constant">G</span><span class="punct">-</span><span class="constant">W</span><span class="punct">%</span><span class="constant">V</span>           <span class="punct">=&gt;</span> <span class="number">2007</span><span class="punct">-</span><span class="constant">W47</span>                  <span class="constant">Week</span> <span class="ident">date</span><span class="punct">,</span> <span class="ident">reduced</span> <span class="ident">accuracy</span><span class="punct">,</span> <span class="ident">specific</span> <span class="ident">week</span> <span class="punct">(</span><span class="ident">extended</span><span class="punct">)</span>
+<span class="punct">%</span><span class="constant">H</span><span class="punct">%</span><span class="constant">M</span><span class="punct">%</span><span class="constant">S</span>           <span class="punct">=&gt;</span> <span class="number">083748</span>                    <span class="constant">Local</span> <span class="ident">time</span> <span class="punct">(</span><span class="ident">basic</span><span class="punct">)</span>
+<span class="punct">%</span><span class="constant">T</span>               <span class="punct">=&gt;</span> <span class="number">08</span><span class="punct">:</span><span class="number">37</span><span class="punct">:</span><span class="number">48</span>                  <span class="constant">Local</span> <span class="ident">time</span> <span class="punct">(</span><span class="ident">extended</span><span class="punct">)</span>
+<span class="punct">%</span><span class="constant">H</span><span class="punct">%</span><span class="constant">M</span>             <span class="punct">=&gt;</span> <span class="number">0837</span>                      <span class="constant">Local</span> <span class="ident">time</span><span class="punct">,</span> <span class="ident">reduced</span> <span class="ident">accuracy</span><span class="punct">,</span> <span class="ident">specific</span> <span class="ident">minute</span> <span class="punct">(</span><span class="ident">basic</span><span class="punct">)</span>
+<span class="punct">%</span><span class="constant">H</span><span class="punct">:%</span><span class="constant">M</span>            <span class="punct">=&gt;</span> <span class="number">08</span><span class="punct">:</span><span class="number">37</span>                     <span class="constant">Local</span> <span class="ident">time</span><span class="punct">,</span> <span class="ident">reduced</span> <span class="ident">accuracy</span><span class="punct">,</span> <span class="ident">specific</span> <span class="ident">minute</span> <span class="punct">(</span><span class="ident">extended</span><span class="punct">)</span>
+<span class="punct">%</span><span class="constant">H</span>               <span class="punct">=&gt;</span> <span class="number">08</span>                        <span class="constant">Local</span> <span class="ident">time</span><span class="punct">,</span> <span class="ident">reduced</span> <span class="ident">accuracy</span><span class="punct">,</span> <span class="ident">specific</span> <span class="ident">hour</span>
+<span class="punct">%</span><span class="constant">H</span><span class="punct">%</span><span class="constant">M</span><span class="punct">%</span><span class="constant">S</span><span class="punct">,%</span><span class="constant">L</span>        <span class="punct">=&gt;</span> <span class="number">083748</span><span class="punct">,</span><span class="number">000</span>                <span class="constant">Local</span> <span class="ident">time</span> <span class="ident">with</span> <span class="ident">decimal</span> <span class="ident">fraction</span><span class="punct">,</span> <span class="ident">comma</span> <span class="ident">as</span> <span class="ident">decimal</span> <span class="ident">sign</span> <span class="punct">(</span><span class="ident">basic</span><span class="punct">)</span>
+<span class="punct">%</span><span class="constant">T</span><span class="punct">,%</span><span class="constant">L</span>            <span class="punct">=&gt;</span> <span class="number">08</span><span class="punct">:</span><span class="number">37</span><span class="punct">:</span><span class="number">48</span><span class="punct">,</span><span class="number">000</span>              <span class="constant">Local</span> <span class="ident">time</span> <span class="ident">with</span> <span class="ident">decimal</span> <span class="ident">fraction</span><span class="punct">,</span> <span class="ident">comma</span> <span class="ident">as</span> <span class="ident">decimal</span> <span class="ident">sign</span> <span class="punct">(</span><span class="ident">extended</span><span class="punct">)</span>
+<span class="punct">%</span><span class="constant">H</span><span class="punct">%</span><span class="constant">M</span><span class="punct">%</span><span class="constant">S</span><span class="punct">.%</span><span class="ident">L</span>        <span class="punct">=&gt;</span> <span class="number">083748.000</span>                <span class="ident">Local</span> <span class="ident">time</span> <span class="ident">with</span> <span class="ident">decimal</span> <span class="ident">fraction</span><span class="punct">,</span> <span class="ident">full</span> <span class="ident">stop</span> <span class="ident">as</span> <span class="ident">decimal</span> <span class="ident">sign</span> <span class="punct">(</span><span class="ident">basic</span><span class="punct">)</span>
+<span class="punct">%</span><span class="constant">T</span><span class="punct">.%</span><span class="ident">L</span>            <span class="punct">=&gt;</span> <span class="number">08</span><span class="punct">:</span><span class="number">37</span><span class="punct">:</span><span class="number">48.000</span>              <span class="ident">Local</span> <span class="ident">time</span> <span class="ident">with</span> <span class="ident">decimal</span> <span class="ident">fraction</span><span class="punct">,</span> <span class="ident">full</span> <span class="ident">stop</span> <span class="ident">as</span> <span class="ident">decimal</span> <span class="ident">sign</span> <span class="punct">(</span><span class="ident">extended</span><span class="punct">)</span>
+<span class="punct">%</span><span class="constant">H</span><span class="punct">%</span><span class="constant">M</span><span class="punct">%</span><span class="constant">S</span><span class="punct">%</span><span class="ident">z</span>         <span class="punct">=&gt;</span> <span class="number">083748</span><span class="punct">-</span><span class="number">0600</span>               <span class="constant">Local</span> <span class="ident">time</span> <span class="keyword">and</span> <span class="ident">the</span> <span class="ident">difference</span> <span class="ident">from</span> <span class="constant">UTC</span> <span class="punct">(</span><span class="ident">basic</span><span class="punct">)</span>
+<span class="punct">%</span><span class="constant">T</span><span class="punct">%:</span><span class="string">z            =&gt; 08</span><span class="punct">:</span><span class="number">37</span><span class="punct">:</span><span class="number">48</span><span class="punct">-</span><span class="number">06</span><span class="punct">:</span><span class="number">00</span>            <span class="constant">Local</span> <span class="ident">time</span> <span class="keyword">and</span> <span class="ident">the</span> <span class="ident">difference</span> <span class="ident">from</span> <span class="constant">UTC</span> <span class="punct">(</span><span class="ident">extended</span><span class="punct">)</span>
+<span class="punct">%</span><span class="constant">Y</span><span class="punct">%</span><span class="ident">m</span><span class="punct">%</span><span class="ident">dT</span><span class="punct">%</span><span class="constant">H</span><span class="punct">%</span><span class="constant">M</span><span class="punct">%</span><span class="constant">S</span><span class="punct">%</span><span class="ident">z</span>  <span class="punct">=&gt;</span> <span class="number">20071119</span><span class="constant">T083748</span><span class="punct">-</span><span class="number">0600</span>      <span class="constant"><a href="/ruby/Date">Date</a></span> <span class="keyword">and</span> <span class="ident">time</span> <span class="ident">of</span> <span class="ident">day</span> <span class="keyword">for</span> <span class="ident">calendar</span> <span class="ident">date</span> <span class="punct">(</span><span class="ident">basic</span><span class="punct">)</span>
+<span class="punct">%</span><span class="constant">FT</span><span class="punct">%</span><span class="constant">T</span><span class="punct">%:</span><span class="string">z         =&gt; 2007-11-19T08</span><span class="punct">:</span><span class="number">37</span><span class="punct">:</span><span class="number">48</span><span class="punct">-</span><span class="number">06</span><span class="punct">:</span><span class="number">00</span> <span class="constant"><a href="/ruby/Date">Date</a></span> <span class="keyword">and</span> <span class="ident">time</span> <span class="ident">of</span> <span class="ident">day</span> <span class="keyword">for</span> <span class="ident">calendar</span> <span class="ident">date</span> <span class="punct">(</span><span class="ident">extended</span><span class="punct">)</span>
+<span class="punct">%</span><span class="constant">Y</span><span class="punct">%</span><span class="ident">jT</span><span class="punct">%</span><span class="constant">H</span><span class="punct">%</span><span class="constant">M</span><span class="punct">%</span><span class="constant">S</span><span class="punct">%</span><span class="ident">z</span>    <span class="punct">=&gt;</span> <span class="number">2007323</span><span class="constant">T083748</span><span class="punct">-</span><span class="number">0600</span>       <span class="constant"><a href="/ruby/Date">Date</a></span> <span class="keyword">and</span> <span class="ident">time</span> <span class="ident">of</span> <span class="ident">day</span> <span class="keyword">for</span> <span class="ident"><a href="/ruby/DateTime/ordinal/class">ordinal</a></span> <span class="ident">date</span> <span class="punct">(</span><span class="ident">basic</span><span class="punct">)</span>
+<span class="punct">%</span><span class="constant">Y</span><span class="punct">-%</span><span class="ident">jT</span><span class="punct">%</span><span class="constant">T</span><span class="punct">%:</span><span class="string">z      =&gt; 2007-323T08</span><span class="punct">:</span><span class="number">37</span><span class="punct">:</span><span class="number">48</span><span class="punct">-</span><span class="number">06</span><span class="punct">:</span><span class="number">00</span>   <span class="constant"><a href="/ruby/Date">Date</a></span> <span class="keyword">and</span> <span class="ident">time</span> <span class="ident">of</span> <span class="ident">day</span> <span class="keyword">for</span> <span class="ident"><a href="/ruby/DateTime/ordinal/class">ordinal</a></span> <span class="ident">date</span> <span class="punct">(</span><span class="ident">extended</span><span class="punct">)</span>
+<span class="punct">%</span><span class="constant">GW</span><span class="punct">%</span><span class="constant">V</span><span class="punct">%</span><span class="ident">uT</span><span class="punct">%</span><span class="constant">H</span><span class="punct">%</span><span class="constant">M</span><span class="punct">%</span><span class="constant">S</span><span class="punct">%</span><span class="ident">z</span> <span class="punct">=&gt;</span> <span class="number">2007</span><span class="constant">W471T083748</span><span class="punct">-</span><span class="number">0600</span>      <span class="constant"><a href="/ruby/Date">Date</a></span> <span class="keyword">and</span> <span class="ident">time</span> <span class="ident">of</span> <span class="ident">day</span> <span class="keyword">for</span> <span class="ident">week</span> <span class="ident">date</span> <span class="punct">(</span><span class="ident">basic</span><span class="punct">)</span>
+<span class="punct">%</span><span class="constant">G</span><span class="punct">-</span><span class="constant">W</span><span class="punct">%</span><span class="constant">V</span><span class="punct">-%</span><span class="ident">uT</span><span class="punct">%</span><span class="constant">T</span><span class="punct">%:</span><span class="string">z  =&gt; 2007-W47-1T08</span><span class="punct">:</span><span class="number">37</span><span class="punct">:</span><span class="number">48</span><span class="punct">-</span><span class="number">06</span><span class="punct">:</span><span class="number">00</span> <span class="constant"><a href="/ruby/Date">Date</a></span> <span class="keyword">and</span> <span class="ident">time</span> <span class="ident">of</span> <span class="ident">day</span> <span class="keyword">for</span> <span class="ident">week</span> <span class="ident">date</span> <span class="punct">(</span><span class="ident">extended</span><span class="punct">)</span>
+<span class="punct">%</span><span class="constant">Y</span><span class="punct">%</span><span class="ident">m</span><span class="punct">%</span><span class="ident">dT</span><span class="punct">%</span><span class="constant">H</span><span class="punct">%</span><span class="constant">M</span>      <span class="punct">=&gt;</span> <span class="number">20071119</span><span class="constant">T0837</span>             <span class="constant">Calendar</span> <span class="ident">date</span> <span class="keyword">and</span> <span class="ident">local</span> <span class="ident">time</span> <span class="punct">(</span><span class="ident">basic</span><span class="punct">)</span>
+<span class="punct">%</span><span class="constant">FT</span><span class="punct">%</span><span class="constant">R</span>            <span class="punct">=&gt;</span> <span class="number">2007</span><span class="punct">-</span><span class="number">11</span><span class="punct">-</span><span class="number">19</span><span class="constant">T08</span><span class="punct">:</span><span class="number">37</span>          <span class="constant">Calendar</span> <span class="ident">date</span> <span class="keyword">and</span> <span class="ident">local</span> <span class="ident">time</span> <span class="punct">(</span><span class="ident">extended</span><span class="punct">)</span>
+<span class="punct">%</span><span class="constant">Y</span><span class="punct">%</span><span class="ident">jT</span><span class="punct">%</span><span class="constant">H</span><span class="punct">%</span><span class="constant">MZ</span>       <span class="punct">=&gt;</span> <span class="number">2007323</span><span class="constant">T0837Z</span>             <span class="constant">Ordinal</span> <span class="ident">date</span> <span class="keyword">and</span> <span class="constant">UTC</span> <span class="ident">of</span> <span class="ident">day</span> <span class="punct">(</span><span class="ident">basic</span><span class="punct">)</span>
+<span class="punct">%</span><span class="constant">Y</span><span class="punct">-%</span><span class="ident">jT</span><span class="punct">%</span><span class="constant">RZ</span>        <span class="punct">=&gt;</span> <span class="number">2007</span><span class="punct">-</span><span class="number">323</span><span class="constant">T08</span><span class="punct">:</span><span class="number">37</span><span class="constant">Z</span>           <span class="constant">Ordinal</span> <span class="ident">date</span> <span class="keyword">and</span> <span class="constant">UTC</span> <span class="ident">of</span> <span class="ident">day</span> <span class="punct">(</span><span class="ident">extended</span><span class="punct">)</span>
+<span class="punct">%</span><span class="constant">GW</span><span class="punct">%</span><span class="constant">V</span><span class="punct">%</span><span class="ident">uT</span><span class="punct">%</span><span class="constant">H</span><span class="punct">%</span><span class="constant">M</span><span class="punct">%</span><span class="ident">z</span>   <span class="punct">=&gt;</span> <span class="number">2007</span><span class="constant">W471T0837</span><span class="punct">-</span><span class="number">0600</span>        <span class="constant">Week</span> <span class="ident">date</span> <span class="keyword">and</span> <span class="ident">local</span> <span class="ident">time</span> <span class="keyword">and</span> <span class="ident">difference</span> <span class="ident">from</span> <span class="constant">UTC</span> <span class="punct">(</span><span class="ident">basic</span><span class="punct">)</span>
+<span class="punct">%</span><span class="constant">G</span><span class="punct">-</span><span class="constant">W</span><span class="punct">%</span><span class="constant">V</span><span class="punct">-%</span><span class="ident">uT</span><span class="punct">%</span><span class="constant">R</span><span class="punct">%:</span><span class="string">z  =&gt; 2007-W47-1T08</span><span class="punct">:</span><span class="number">37</span><span class="punct">-</span><span class="number">06</span><span class="punct">:</span><span class="number">00</span>    <span class="constant">Week</span> <span class="ident">date</span> <span class="keyword">and</span> <span class="ident">local</span> <span class="ident">time</span> <span class="keyword">and</span> <span class="ident">difference</span> <span class="ident">from</span> <span class="constant">UTC</span> <span class="punct">(</span><span class="ident">extended</span><span class="punct">)</span>
+</pre>
+
+<p>See also <a href="/ruby/DateTime/strftime">strftime</a>(3) and ::<a
+href="/ruby/DateTime/strptime/class">strptime</a>.</p>
+
+  </div>
+
+  <div class="sourcecode">
+    <a href="#" id="source_link" onclick="Effect.toggle(&quot;dyn_source&quot;,'blind',{duration:0.3});
+var source_link = $('source_link')
+source_link.update((source_link.innerHTML == 'Hide source')? 'Show source':'Hide source');; return false;">Show source</a>    
+    <div id="dyn_source" style="display: none;" >
+      <pre><span class="ident">static</span> <span class="constant">VALUE</span>
+<span class="ident">dt_lite_strftime</span><span class="punct">(</span><span class="ident">int</span> <span class="ident">argc</span><span class="punct">,</span> <span class="constant">VALUE</span> <span class="punct">*</span><span class="ident">argv</span><span class="punct">,</span> <span class="constant">VALUE</span> <span class="constant">self</span><span class="punct">)</span>
+<span class="punct">{</span>
+    <span class="keyword">return</span> <span class="ident">date_strftime_internal</span><span class="punct">(</span><span class="ident">argc</span><span class="punct">,</span> <span class="ident">argv</span><span class="punct">,</span> <span class="constant">self</span><span class="punct">,</span>
+                                  <span class="punct">&quot;</span><span class="string">%Y-%m-%dT%H:%M:%S%:z</span><span class="punct">&quot;,</span> <span class="ident">set_tmx</span><span class="punct">);</span>
+<span class="punct">}</span></pre>
+    </div>
+  </div>
+
+</div>
+<div id="notes">
+  
+    <span class="info">
+      <a href="/register">Register</a> or 
+      <a href="#" onclick="scroll(0,0);
+new Effect.Pulsate(&quot;header_right&quot;,{duration:1, pulses:2});
+$(&quot;login&quot;).activate();; return false;">log in</a>
+      to add new notes.</span>
+  
+  
+  
+<div class="note" id="307-Formatting-options">
+
+  <div class="note_info" id="note_info-307">
+      <div class="info_left">
+    <span class="login"><a href="/users/Ariejan"><img alt="Default_avatar_30" class="gravatar" src="https://www.gravatar.com/avatar/a9bfdd0cc75c857b669c37548b8bfdf9?default=http://apidock.com/images/default_avatar_30.png&amp;size=30" style="width: 30px; height: 30px;" /> Ariejan</a> - </span> 
+    November 19, 2008 
+    
+  </div>
+
+  <div class="info_right">
+    <img alt="Loader" class="loader" id="note_loader307" src="https://d3bro1z16yfjvi.cloudfront.net/images/loader.gif?1349367920" style="display: none;" />
+    <span class="thank_text">9 thanks</span>
+     
+  </div>  
+
+  </div>
+  
+  <div class="note_content" id="note_content-307">     
+  
+  
+  <h4><a href="/ruby/DateTime/strftime#307-Formatting-options">Formatting options</a></h4>
+
+<p>Readable <a href="/ruby/DateTime/strftime">strftime</a></p>
+
+<p>%a - The abbreviated weekday name (“Sun”)</p>
+
+<p>%A - The full weekday name (“Sunday”)</p>
+
+<p>%b - The abbreviated month name (“Jan”)</p>
+
+<p>%B - The full month name (“January”)</p>
+
+<p>%c - The preferred local date and time representation</p>
+
+<p>%d - Day of the month (01..31)</p>
+
+<p>%H - Hour of the day, 24-hour clock (00..23)</p>
+
+<p>%I - Hour of the day, 12-hour clock (01..12)</p>
+
+<p>%j - Day of the year (001..366)</p>
+
+<p>%m - Month of the year (01..12)</p>
+
+<p>%M - Minute of the <a href="/ruby/DateTime/hour">hour</a> (00..59)</p>
+
+<p>%p - Meridian indicator (“AM” or “PM”)</p>
+
+<p>%S - Second of the <a href="/ruby/DateTime/minute">minute</a> (00..60)</p>
+
+<p>%U - Week number of the current year, starting with the first Sunday as the
+first day of the first week (00..53)</p>
+
+<p>%W - Week number of the current year, starting with the first Monday as the
+first day of the first week (00..53)</p>
+
+<p>%w - Day of the week (Sunday is 0, 0..6)</p>
+
+<p>%x - Preferred representation for the date alone, no time</p>
+
+<p>%X - Preferred representation for the time alone, no date</p>
+
+<p>%y - Year without a century (00..99)</p>
+
+<p>%Y - Year with century</p>
+
+<p>%Z - <a href="/ruby/Time">Time</a> <a href="/ruby/DateTime/zone">zone</a>
+name %% - <a href="/rails/ActionDispatch/Journey/Nodes/Literal">Literal</a>
+“%’’ character t = <a href="/ruby/Time/now/class">Time.now</a> t.<a
+href="/ruby/DateTime/strftime">strftime</a>(“Printed on %m/%d/%Y”)
+#=&gt; “Printed on 04/09/2003” t.<a
+href="/ruby/DateTime/strftime">strftime</a>(“at %I:%M%p”) #=&gt; “at
+08:56AM”</p>
+
+  
+  </div>
+</div>
+<div class="note" id="765-lower-case-am-pm">
+
+  <div class="note_info" id="note_info-765">
+      <div class="info_left">
+    <span class="login"><a href="/users/jerrett"><img alt="Default_avatar_30" class="gravatar" src="https://www.gravatar.com/avatar/d9789da0d44b38ed299140edb75744ed?default=http://apidock.com/images/default_avatar_30.png&amp;size=30" style="width: 30px; height: 30px;" /> jerrett</a> - </span> 
+    November 10, 2009 
+    
+  </div>
+
+  <div class="info_right">
+    <img alt="Loader" class="loader" id="note_loader765" src="https://d3bro1z16yfjvi.cloudfront.net/images/loader.gif?1349367920" style="display: none;" />
+    <span class="thank_text">1 thank</span>
+     
+  </div>  
+
+  </div>
+  
+  <div class="note_content" id="note_content-765">     
+  
+  
+  <h4><a href="/ruby/DateTime/strftime#765-lower-case-am-pm">lower case am/pm</a></h4>
+
+<p>With <a href="/ruby/DateTime/strftime">DateTime#strftime</a> you can also
+use %P to get a lowercase am/pm. Not so with <a
+href="/ruby/Time/strftime">Time#strftime</a> though!</p>
+
+  
+  </div>
+</div>
+<div class="note" id="1420-Bug-in-Ruby-or-this-documentation">
+
+  <div class="note_info" id="note_info-1420">
+      <div class="info_left">
+    <span class="login"><a href="/users/panzi"><img alt="Default_avatar_30" class="gravatar" src="https://www.gravatar.com/avatar/d264e9dd3768e50e27aa3364cdfe3b6d?default=http://apidock.com/images/default_avatar_30.png&amp;size=30" style="width: 30px; height: 30px;" /> panzi</a> - </span> 
+    May 16, 2013 
+    
+  </div>
+
+  <div class="info_right">
+    <img alt="Loader" class="loader" id="note_loader1420" src="https://d3bro1z16yfjvi.cloudfront.net/images/loader.gif?1349367920" style="display: none;" />
+    <span class="thank_text">1 thank</span>
+     
+  </div>  
+
+  </div>
+  
+  <div class="note_content" id="note_content-1420">     
+  
+  
+  <h4><a href="/ruby/DateTime/strftime#1420-Bug-in-Ruby-or-this-documentation">Bug in Ruby or this documentation</a></h4>
+
+<p>%Q doesn’t return microseconds but milliseconds! Use %s%6N for
+microseconds.</p>
+
+  
+  </div>
+</div>
+<div class="note" id="492-Hour-with-without-preceding-zero">
+
+  <div class="note_info" id="note_info-492">
+      <div class="info_left">
+    <span class="login"><a href="/users/patrickberkeley"><img alt="Default_avatar_30" class="gravatar" src="https://www.gravatar.com/avatar/8ed012cdadc426439401b1d9f56ba857?default=http://apidock.com/images/default_avatar_30.png&amp;size=30" style="width: 30px; height: 30px;" /> patrickberkeley</a> - </span> 
+    March 27, 2009 
+    
+  </div>
+
+  <div class="info_right">
+    <img alt="Loader" class="loader" id="note_loader492" src="https://d3bro1z16yfjvi.cloudfront.net/images/loader.gif?1349367920" style="display: none;" />
+    <span class="thank_text">0 thanks</span>
+     
+  </div>  
+
+  </div>
+  
+  <div class="note_content" id="note_content-492">     
+  
+  
+  <h4><a href="/ruby/DateTime/strftime#492-Hour-with-without-preceding-zero">Hour with/without preceding zero</a></h4>
+
+<p><a href="/rails/ActiveStorage/Attached/One">One</a> gotcha is the
+difference between the <a href="/ruby/DateTime/hour">hour</a> in 12 <a
+href="/ruby/DateTime/hour">hour</a> time with and without a preceding zero.
+In some fonts they look the same.</p>
+
+<h4>With preceding zero (capital I) </h4>
+
+<pre><span class="constant"><a href="/ruby/Time">Time</a></span><span class="punct">.</span><span class="ident"><a href="/ruby/DateTime/now/class">now</a></span><span class="punct">.</span><span class="ident"><a href="/ruby/DateTime/strftime">strftime</a></span><span class="punct">(&quot;</span><span class="string">%I:%M</span><span class="punct">&quot;)</span> <span class="comment"># =&gt; 05:21</span>
+</pre>
+
+<h4>Without preceding zero (lowercase L)</h4>
+
+<pre><span class="constant"><a href="/ruby/Time">Time</a></span><span class="punct">.</span><span class="ident"><a href="/ruby/DateTime/now/class">now</a></span><span class="punct">.</span><span class="ident"><a href="/ruby/DateTime/strftime">strftime</a></span><span class="punct">(&quot;</span><span class="string">%l:%M</span><span class="punct">&quot;)</span> <span class="comment"># =&gt; 5:21</span></pre>
+
+  
+  </div>
+</div>
+<div class="note" id="864-Complete-Formatting-Codes">
+
+  <div class="note_info" id="note_info-864">
+      <div class="info_left">
+    <span class="login"><a href="/users/mindloaf"><img alt="Default_avatar_30" class="gravatar" src="https://www.gravatar.com/avatar/405f82a534decdf47041a5c8dc05ba3f?default=http://apidock.com/images/default_avatar_30.png&amp;size=30" style="width: 30px; height: 30px;" /> mindloaf</a> - </span> 
+    March 12, 2010 
+    
+  </div>
+
+  <div class="info_right">
+    <img alt="Loader" class="loader" id="note_loader864" src="https://d3bro1z16yfjvi.cloudfront.net/images/loader.gif?1349367920" style="display: none;" />
+    <span class="thank_text">0 thanks</span>
+     
+  </div>  
+
+  </div>
+  
+  <div class="note_content" id="note_content-864">     
+  
+  
+  <h4><a href="/ruby/DateTime/strftime#864-Complete-Formatting-Codes">Complete Formatting Codes</a></h4>
+
+<p>%a - The abbreviated weekday name (“Sun”)</p>
+
+<p>%A - The  full  weekday  name (“Sunday”)</p>
+
+<p>%b - The abbreviated month name (“Jan”)</p>
+
+<p>%B - The  full  month  name (“January”)</p>
+
+<p>%c - The preferred local date and time representation</p>
+
+<p>%C - Century (20 in 2009)</p>
+
+<p>%d - Day of the month (01..31)</p>
+
+<p>%D - <a href="/ruby/Date">Date</a> (%m/%d/%y)</p>
+
+<p>%e - Day of the month, blank-padded ( 1..31)</p>
+
+<p>%F - Equivalent to %Y-%m-%d (the ISO 8601 date format)</p>
+
+<p>%h - Equivalent to %b</p>
+
+<p>%H - Hour of the day, 24-hour clock (00..23)</p>
+
+<p>%I - Hour of the day, 12-hour clock (01..12)</p>
+
+<p>%j - Day of the year (001..366)</p>
+
+<p>%k - hour, 24-hour clock, blank-padded ( 0..23)</p>
+
+<p>%l - hour, 12-hour clock, blank-padded ( 0..12)</p>
+
+<p>%L - Millisecond of the <a href="/ruby/DateTime/second">second</a>
+(000..999)</p>
+
+<p>%m - Month of the year (01..12)</p>
+
+<p>%M - Minute of the <a href="/ruby/DateTime/hour">hour</a> (00..59)</p>
+
+<p>%n - Newline (n)</p>
+
+<p>%N - Fractional seconds digits, default is 9 digits (nanosecond)</p>
+<ul><li>
+<p>%3N  millisecond (3 digits)</p>
+</li><li>
+<p>%6N  microsecond (6 digits)</p>
+</li><li>
+<p>%9N  nanosecond (9 digits)</p>
+</li></ul>
+
+<p>%p - Meridian indicator (“AM”  or  “PM”)</p>
+
+<p>%P - Meridian indicator (“am”  or  “pm”)</p>
+
+<p>%r - time, 12-hour (same as %I:%M:%S %p)</p>
+
+<p>%R - time, 24-hour (%H:%M)</p>
+
+<p>%s - Number of seconds since 1970-01-01 00:00:00 UTC.</p>
+
+<p>%S - Second of the <a href="/ruby/DateTime/minute">minute</a> (00..60)</p>
+
+<p>%t - Tab character (t)</p>
+
+<p>%T - time, 24-hour (%H:%M:%S)</p>
+
+<p>%u - Day of the week as a decimal, Monday being 1. (1..7)</p>
+
+<p>%U - Week  number  of the current year, starting with the first Sunday as
+the first day of the first week (00..53)</p>
+
+<p>%v - VMS date (%e-%b-%Y)</p>
+
+<p>%V - Week number of year according to ISO 8601 (01..53)</p>
+
+<p>%W - Week  number  of the current year, starting with the first Monday as
+the first day of the first week (00..53)</p>
+
+<p>%w - Day of the week (Sunday is 0, 0..6)</p>
+
+<p>%x - Preferred representation for the date alone, no time</p>
+
+<p>%X - Preferred representation for the time alone, no date</p>
+
+<p>%y - Year without a century (00..99)</p>
+
+<p>%Y - Year with century</p>
+
+<p>%z - <a href="/ruby/Time">Time</a> <a href="/ruby/DateTime/zone">zone</a>
+as  <a href="/ruby/DateTime/hour">hour</a> <a
+href="/ruby/DateTime/offset">offset</a> from UTC (e.g. +0900)</p>
+
+<p>%Z - <a href="/ruby/Time">Time</a> <a href="/ruby/DateTime/zone">zone</a>
+name</p>
+
+<p>%% - <a href="/rails/ActionDispatch/Journey/Nodes/Literal">Literal</a>
+“%” character</p>
+
+<pre><span class="ident">t</span> <span class="punct">=</span> <span class="constant"><a href="/ruby/Time">Time</a></span><span class="punct">.</span><span class="ident"><a href="/ruby/DateTime/now/class">now</a></span>                        <span class="comment">#=&gt; 2007-11-19 08:37:48 -0600</span>
+<span class="ident">t</span><span class="punct">.</span><span class="ident"><a href="/ruby/DateTime/strftime">strftime</a></span><span class="punct">(&quot;</span><span class="string">Printed on %m/%d/%Y</span><span class="punct">&quot;)</span>   <span class="comment">#=&gt; &quot;Printed on 11/19/2007&quot;</span>
+<span class="ident">t</span><span class="punct">.</span><span class="ident"><a href="/ruby/DateTime/strftime">strftime</a></span><span class="punct">(&quot;</span><span class="string">at %I:%M%p</span><span class="punct">&quot;)</span>            <span class="comment">#=&gt; &quot;at 08:37AM&quot;</span></pre>
+
+  
+  </div>
+</div>
+<div class="note" id="1314-see-also-similar-methods">
+
+  <div class="note_info" id="note_info-1314">
+      <div class="info_left">
+    <span class="login"><a href="/users/roryokane"><img alt="Default_avatar_30" class="gravatar" src="https://www.gravatar.com/avatar/5b2b185c814bb25f2f95a1152e58f033?default=http://apidock.com/images/default_avatar_30.png&amp;size=30" style="width: 30px; height: 30px;" /> roryokane</a> - </span> 
+    June 28, 2012 
+    
+  </div>
+
+  <div class="info_right">
+    <img alt="Loader" class="loader" id="note_loader1314" src="https://d3bro1z16yfjvi.cloudfront.net/images/loader.gif?1349367920" style="display: none;" />
+    <span class="thank_text">0 thanks</span>
+     
+  </div>  
+
+  </div>
+  
+  <div class="note_content" id="note_content-1314">     
+  
+  
+  <h4><a href="/ruby/DateTime/strftime#1314-see-also-similar-methods">see also – similar methods</a></h4>
+
+<p>See also <a href="/ruby/Time/strftime">Time#strftime</a> and <a
+href="/ruby/Date/strftime">Date#strftime</a> . (They work similarly, but
+have different APIdock notes.)</p>
+
+  
+  </div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div id="footer">
+  <div id="footer_left">
+    <ul>
+  <li class="first_tab"><a href="/">Welcome</a></li>
+  <li><a href="/register">Register</a></li>
+  <li><a href="/projects">Projects</a></li>
+  <li><a href="/faq">Help</a></li>
+  <li><a href="/about">About</a></li>
+  <li class="external"><a href="http://blog.nodeta.fi/category/apidock/">Blog</a></li>
+</ul>
+
+    <p>
+      <br />
+      APIdock release: IRON STEVE (1.4)<br />
+      If you have any comments, ideas or feedback, feel free to contact us at <script type="text/javascript">eval(decodeURIComponent('%64%6f%63%75%6d%65%6e%74%2e%77%72%69%74%65%28%27%3c%61%20%68%72%65%66%3d%5c%22%6d%61%69%6c%74%6f%3a%74%65%61%6d%40%61%70%69%64%6f%63%6b%2e%63%6f%6d%5c%22%3e%74%65%61%6d%40%61%70%69%64%6f%63%6b%2e%63%6f%6d%3c%5c%2f%61%3e%27%29%3b'))</script>
+    </p>
+    <p class="ndt_copyright">
+      <a href="http://blog.nodeta.com/"><img alt="Go to Nodeta blog" src="https://d3bro1z16yfjvi.cloudfront.net/images/nodeta_logo.png?1349367920" /></a>
+      APIdock copyright Nodeta Oy 2008-2019
+    </p>
+  </div>
+  <!-- @flowdock -->
+    <div id="footer_flowdock">
+      
+      <a href="http://www.flowdock.com/" title="Flowdock - Team Inbox With Chat"><img alt="Flowdock" src="https://d3bro1z16yfjvi.cloudfront.net/images/flowdock_promo.png?1349367920" /></a>
+      <a href="http://www.flowdock.com/" title="Flowdock - Team Inbox With Chat"><h3>Flowdock - Team Inbox With Chat</h3></a>
+      <p>Flowdock is a collaboration tool for technical teams. Version control, project management, deployments and your group chat in one place.</p>
+    </div>
+  <!-- /@flowdock -->
+</div>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2741725-8']);
+  _gaq.push(['_setDomainName', ".apidock.com"]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+  })();
+
+</script>
+
+    </div>
+  	<script type="text/javascript">
+var fieldFocus = true;
+var resultsContainer = $('search_results');
+new SearchField($('nav_search_field'), resultsContainer, $('submit_nav_search'), 3, document.searchKeywords, document.searchData, 'ruby', '1_8_6_287','2_6_3');
+// Position the results container
+var navi = $('navigation');
+resultsContainer.setStyle({
+	top: navi.cumulativeOffset().top + navi.getHeight() + 'px'
+});
+</script>
+
+    <script type="text/javascript">
+var msgs = $$('.flash_message');
+msgs.invoke('hide');
+// Observer for messages
+document.observe('dom:loaded', function() {
+  msgs.each(function(elem) { 
+    new Effect.Appear(elem, {duration: 0.5});
+    elem.observe('click', function(event) {
+      var clicked = event.element();
+      if (clicked.match('img')) {
+        new Effect.Fade(elem, {duration: 0.3});
+        etTimeout(function(){elem.remove();}.bind(elem), 400 );
+      }
+    })
+  });
+});
+</script>
+  </body>
+</html>

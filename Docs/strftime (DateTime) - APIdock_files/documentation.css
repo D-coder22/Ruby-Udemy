@@ -1,0 +1,416 @@
+body {
+  background: none !important;
+}
+#body2 {
+  background: none !important;
+}
+#content {
+  background: none !important;
+}
+.message {
+  margin-left: 0;
+}
+h1,h2,h3,h4 {
+  clear: none;
+}
+h1 {
+  margin-left: 0;
+}
+#navigation {
+  background: #BA2727 url("https://d3bro1z16yfjvi.cloudfront.net/images/nav_bg.png?20121004") repeat-x bottom;
+}
+#content h1, #content h3, #content h1 a, #content h3 a {
+  color: #BA2727;
+  border-bottom-color: #BA2727;
+}
+#content h1 a:hover, #content h3 a:hover {
+  color: #FF633F;
+  border: none;
+}
+
+/* Front page styles */
+
+#left_column #docs_header {
+  width: 100%;
+  margin-bottom: 0;
+}
+#left_column #docs_info {
+  padding-bottom: 0;
+}
+.dashboard {
+  float: left;
+  width: 100%;
+}
+.dashboard h3 {
+  display: inline;
+  float: none;
+  line-height: 2em;
+  border-bottom: 2px solid #BA2727;
+  margin: 1.2em 0 0 0 !important;
+  width: 100%;
+}
+.dashboard .gravatar, .dashboard .logo {
+  float: left;
+  margin: 1em 0;
+}
+.dashboard ul.no_bullets {
+  float: left;
+  padding-left: 1.5em;
+  margin: 1em 0 0 0;
+  line-height: 150%;
+}
+.dashboard ul.no_bullets img {
+  margin: 0 !important;
+}
+.dashboard ul.no_bullets {
+  margin-bottom: 0;
+}
+
+/* Browse styles */
+
+#browse_body {
+  width: 100%;
+	min-width: 700px;
+  float: left;
+  margin: 1em 0 0 0;
+  font-size: 80%;
+}
+#browse_body img.importance {
+  float: left;
+  position: relative;
+  top: 3px;
+  margin-right: 0.5em;
+}
+#browse_body .list_left {
+  max-width: 80%;
+}
+
+/* Documentation styles */
+
+#docs_container {
+  width: 100%;
+	min-width: 820px;
+}
+#docs_header {
+  font-size: 75%;
+  color: #696969;
+  float: left;
+  width: 72%;
+  margin: 1.5em 0 1.5em 0;
+}
+#docs_header h1 {
+  font-size: 200%;
+  padding-bottom: 0.1em;
+}
+#title {
+  padding: 0 0 0.5em 0;
+  margin: 0;
+  vertical-align: bottom;
+  border-bottom: 2px solid #BA2727;
+}
+#title .importance {
+  float: right;
+}
+.title_prefix {
+  font-weight: bold;
+  font-size: 80%;
+  width: 10em;
+  height: 3.5em;
+  float: left;
+}
+.title_prefix span {
+  padding-left: 45px;
+}
+#title_prefix_class {
+  background: url("https://d3bro1z16yfjvi.cloudfront.net/images/icon_class.png?20121004") no-repeat;
+}
+#title_prefix_module {
+  background: url("https://d3bro1z16yfjvi.cloudfront.net/images/icon_module.png?20121004") no-repeat;
+}
+#title_prefix_method {
+  background: url("https://d3bro1z16yfjvi.cloudfront.net/images/icon_method.png?20121004") no-repeat;
+}
+#title_prefix_project {
+  background: url("https://d3bro1z16yfjvi.cloudfront.net/images/icon_project.png?20121004") no-repeat;
+}
+#title_prefix_file {
+  background: url("https://d3bro1z16yfjvi.cloudfront.net/images/icon_file.png?20121004") no-repeat;
+}
+#title_prefix_method span {
+  padding-left: 35px;
+}
+#title_name {
+  float: left;
+  max-width: 72%;
+}
+#title_name h1 {
+  border: none;
+  display: inline;
+}
+#title_name span {
+  float: left;
+}
+#docs_info {
+  padding: 0.4em 0 1.5em 0;
+  width: 100%;
+}
+#related {
+  float: right;
+  width: 25%;
+  margin: 1em 0 2em 0;
+  white-space: nowrap;
+}
+#related_title {
+  border-bottom: 2px solid #BA2727;
+  margin: 0;
+  height: 2.6em;
+  vertical-align: bottom;
+}
+#related_title h3 {
+  margin: 0;
+  position: relative;
+  top: 1em;
+  font-size: 100%;
+}
+#related ul {
+  list-style-type: none;
+  font-size: 80%;
+  line-height: 150%;
+  margin: 1em 0 0 0;
+  padding: 0;
+}
+.related_header {
+  font-weight: bold;
+  margin: 0.7em 0 0.5em 0;
+}
+.deprecated a {
+  color: #888 !important;
+}
+.deprecated a:hover {
+  color: #aaa !important;
+  border-bottom-color: #aaa !important;
+}
+.newer a {
+  color: #AB7F17 !important;
+}
+.newer a:hover {
+  color: #CC9A1C !important;
+  border-bottom-color: #CC9A1C !important;
+}
+.legend {
+  margin-top: 2em !important;
+  font-size: 70%;
+  color: #888;
+}
+#docs_body {
+  width: 65%;
+  float: left;
+}
+#docs_body code {
+  font: 120%/120% monospace;
+}
+.description {
+  margin-bottom: 2em;
+}
+.attributes {
+  border: none;
+}
+.attributes td {
+  padding: 0.5em;
+  vertical-align: top;
+}
+.attributes td p {
+  margin: 0;
+}
+#source_link {
+  background: url("https://d3bro1z16yfjvi.cloudfront.net/images/icon_file_sm.png?20121004") no-repeat left 2px;
+  padding-left: 20px;
+}
+#add_note_link {
+  background: url("https://d3bro1z16yfjvi.cloudfront.net/images/icon_note_sm.png?20121004") no-repeat left 2px;
+  padding-left: 23px;
+}
+
+/* Version ui styles */
+
+#timeline {
+  margin: 0.5em 0;
+}
+#timeline .img_link {
+  margin: 0 0.5em;
+  float: left;
+}
+#timeline ul { 
+  font-size: 75%; 
+  list-style-type: none !important;
+  padding: 0;
+  margin: 0 1em 0 0;
+  display: inline;
+  float: left;
+}
+#timeline li { 
+  height: 5em;
+  position: relative;
+  float: left;
+  display: inline;
+  margin: 0 0 1em 0;
+  min-width: 3em;
+}
+#timeline li.positive {
+  background: url("https://d3bro1z16yfjvi.cloudfront.net/images/diff_positive_bg.png?20121004") no-repeat left top;
+}
+#timeline li.negative {
+  background: url("https://d3bro1z16yfjvi.cloudfront.net/images/diff_negative_bg.png?20121004") no-repeat left bottom;
+}
+#timeline li:hover {
+  background-color: #CCEDFD;
+}
+#timeline li.static:hover {
+  background-color: transparent;
+}
+#timeline li a,
+#timeline li span.a { 
+  display: block;
+  height: 100%;  
+  padding: 0;
+  margin: 0;
+  color: #fff;
+}
+#timeline li a:hover { 
+  border-bottom: none !important;
+  color: #DBDB51;
+}
+
+/* 
+ * The height of the label in the middle determines the dimensions
+ * of the difference bars. The maximum bar height in 
+ * DocumentationsHelper#draw_version_graph is calculated by
+ * 
+ * (graph height - label height)/2 [in percent of graph height]
+ */
+#timeline li .label { 
+  display: block; 
+  position: relative; 
+  top: 1.9em; 
+  line-height: 1.2em;
+  left: 0;
+  text-align: center;
+  background-color: #555;
+  padding: 0 0.4em;
+}
+#timeline li a .diff,
+#timeline li span.a .diff {
+  display: block;
+  position: absolute;
+  left: 0;
+  text-indent: -9999px;
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  background: #AAA;
+}
+#timeline li.positive a .diff,
+#timeline li.positive span.a .diff {
+  bottom: 3.13em;
+  background: url("https://d3bro1z16yfjvi.cloudfront.net/images/diff_positive.png?20121004") repeat-x left top;
+}
+#timeline li.negative a .diff,
+#timeline li.negative span.a .diff {
+  top: 3.1em;
+  background: url("https://d3bro1z16yfjvi.cloudfront.net/images/diff_negative.png?20121004") repeat-x left bottom; 
+}
+#timeline li.current a {
+  color: #DBDB51;
+  font-weight: bold;
+}
+#timeline li.current a .label {
+  background-color: #000;
+}
+#timeline li.inactive:hover {
+  background: none;
+}
+#timeline li.inactive .label {
+  color: #FFF;
+  background-color: #aaa;
+}
+#timeline li#help {
+  font-size: 150%;
+  width: auto;
+  height: auto;
+  padding: 0 0.5em;
+}
+#timeline li#help:hover {
+  background-color: transparent;
+}
+#timeline li#help a {
+  color: #233FBF;
+}
+#timeline li#help a:hover {
+  color: #7F95FF;
+  border-bottom: 1px dashed #7F95FF !important;
+}
+
+/* Note adding form styles */
+
+#new_note_div {
+  margin: 1em 0 2em 0;
+  background: #fff url("https://d3bro1z16yfjvi.cloudfront.net/images/new_note_bg.png?20121004") repeat-x;
+  border: 2px solid #40A3CF;
+  padding: 1em;
+  float: left;
+  width: 92%;
+}
+#new_note_div .field {
+  width: 95%;
+}
+#new_note_div label {
+  width: 20%;
+}
+#new_note_div input, 
+#new_note_div textarea,
+#new_note_div select {
+  border-color: #40A3CF !important;
+}
+#new_note_div input[type="text"],
+#new_note_div textarea {
+  width: 72%;
+}
+#new_note_div input[type="text"]:focus,
+#new_note_div textarea:focus {
+  background-color: #fff;
+}
+#new_note_div textarea {
+  height: 20em;
+}
+#new_note_div input[type="submit"] {
+  margin-left: 20%;
+}
+#new_note_div .loader {
+  padding-top: 0.3em;
+}
+
+#flowdock-tab {
+	text-indent: -100000px;
+	background:url(https://d3bro1z16yfjvi.cloudfront.net/images/flowdock-tab.png?20121004) no-repeat;
+	text-align:center;
+	padding:10px 2px;
+	width:25px;
+	height:112px;
+	margin-top:60px;
+	float:left;
+}
+
+#flowdock-tab:hover {
+	background-position:-29px 0;
+}
+
+#footer_flowdock {
+	width:30%;
+	float:left;
+	padding:15px 20px;
+}
+
+#footer_flowdock img {float:left;}
+#footer_flowdock a {color:#30B7EB;}
+#footer_flowdock h3 {margin:0 0 0 65px;}
+#footer_flowdock p {margin:5px 0 5px 65px;}

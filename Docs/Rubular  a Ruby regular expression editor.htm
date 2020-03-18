@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+<title>Rubular: a Ruby regular expression editor</title>
+<meta name="keywords" content="regular expression, regex, regexp, ruby, rails, programming, development, editor, tester, tool">
+<meta name="description" content="Ruby-based regular expression editor/tester">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Rubular">
+<meta property="og:description" content="Ruby-based regular expression editor/tester">
+<meta property="og:image" content="https://rubular.com/assets/rubular_og-4948f7355b502d134c18e9fade5bc2e39c3a343ae818f2f5bdf922d8dc9bd919.png">
+<meta property="og:url" content="https://rubular.com">
+<meta name="twitter:card" content="summary_large_image" "="">
+<link rel="shortcut icon" href="https://rubular.com/assets/favicon-45ccd548f76f6c2960ad6ce6128b6c245937e2219e6fab4d1fa61bb33616961c.ico">
+<script type="text/javascript" async="" src="Rubular%20%20a%20Ruby%20regular%20expression%20editor_files/ga.js"></script><script src="Rubular%20%20a%20Ruby%20regular%20expression%20editor_files/application-0ea1ad0961b9d166106fd39dabac34810e59572b61d5c7fdd.js"></script>
+<link rel="stylesheet" media="screen" href="Rubular%20%20a%20Ruby%20regular%20expression%20editor_files/application-31f250c1b63f32a8e11e366a62be346b9c9858aa9217bd97.css">
+<!--[if lte IE 6]>
+      <link rel="stylesheet" media="screen" href="/assets/iefix-70f8c1d538cd2fed4d7e94d58dd0814f11c5fbf43482a0e4b9cfc32ee9b656dc.css" />
+    <![endif]-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2302692-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+<body onload="Rubular.clearFields('','', '')">
+<div id="main">
+<h1><a href="https://rubular.com/">Rubular</a></h1>
+<h2>a Ruby regular expression editor</h2>
+<div id="inner" class="gainlayout">
+<div id="ajax_loader_wrapper" style="display:none"><img src="Rubular%20%20a%20Ruby%20regular%20expression%20editor_files/ajax-loader-3f3c13d972c1f87802b643db53e115718090a72652493c37.gif"></div>
+<div id="form_wrapper">
+<form id="test_form" action="/regex/do_test" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓">
+<label id="regex_label" for="regex">Your regular expression:</label><br>
+<span class="slash">/</span><input type="text" name="regex" id="regex" size="80" tabindex="1"><span class="slash">/</span><input type="text" name="options" id="options" size="8" tabindex="2"><br>
+<div id="test_and_result" class="gainlayout">
+<div id="test_string">
+<div id="inner_test_string_wrapper">
+<label for="test">Your test string:</label>
+<textarea name="test" id="test" tabindex="3" cols="56" rows="10"></textarea>
+<div id="test_controls">
+<span id="test_settings">
+<label>Wrap words <input type="checkbox" name="word_wrap" id="word_wrap" value="1" checked="checked"></label>
+<label>Show invisibles <input type="checkbox" name="show_invisibles" id="show_invisibles" value="1"></label>
+</span>
+
+</div>
+</div>
+</div>
+<div id="result"><div class="notice" id="start_instructions">
+Rubular is a Ruby-based regular expression editor. It's a handy way to test regular expressions as you write them.<br><br>
+To start, enter a regular expression and a test string. Or you can <a href="#" onclick="Rubular.example(); return false;">try an example</a>.
+</div></div>
+</div>
+</form> </div>
+<div id="ajax_note" style="display:none"></div>
+<div class="form_controls">
+<a href="#" onclick="Rubular.makePermalink(); return false;">make permalink</a>
+<a href="#" onclick="Rubular.clearFields(); return false;">clear fields</a>
+</div>
+</div>
+<h3>Regex quick reference</h3>
+<div id="quickref">
+<div style="float:left">
+<table>
+<tbody><tr>
+<td><code>[abc]</code></td>
+<td>A single character of: a, b, or c</td>
+</tr>
+<tr>
+<td><code>[^abc]</code></td>
+<td>Any single character except: a, b, or c</td>
+</tr>
+<tr>
+<td><code>[a-z]</code></td>
+<td>Any single character in the range a-z</td>
+</tr>
+<tr>
+<td><code>[a-zA-Z]</code></td>
+<td>Any single character in the range a-z or A-Z</td>
+</tr>
+<tr>
+<td><code>^</code></td>
+<td>Start of line</td>
+</tr>
+<tr>
+<td><code>$</code></td>
+<td>End of line</td>
+</tr>
+<tr>
+<td><code>\A</code></td>
+<td>Start of string</td>
+</tr>
+<tr>
+<td><code>\z</code></td>
+<td>End of string</td>
+</tr>
+</tbody></table>
+</div>
+<div style="float:left">
+<table>
+<tbody><tr>
+<td><code>.</code></td>
+<td>Any single character</td>
+</tr>
+<tr>
+<td><code>\s</code></td>
+<td>Any whitespace character</td>
+</tr>
+<tr>
+<td><code>\S</code></td>
+<td>Any non-whitespace character</td>
+</tr>
+<tr>
+<td><code>\d</code></td>
+<td>Any digit</td>
+</tr>
+<tr>
+<td><code>\D</code></td>
+<td>Any non-digit</td>
+</tr>
+<tr>
+<td><code>\w</code></td>
+<td>Any word character (letter, number, underscore)</td>
+</tr>
+<tr>
+<td><code>\W</code></td>
+<td>Any non-word character</td>
+</tr>
+<tr>
+<td><code>\b</code></td>
+<td>Any word boundary</td>
+</tr>
+</tbody></table>
+</div>
+<table>
+<tbody><tr>
+<td><code>(...)</code></td>
+<td>Capture everything enclosed</td>
+</tr>
+<tr>
+<td><code>(a|b)</code></td>
+<td>a or b</td>
+</tr>
+<tr>
+<td><code>a?</code></td>
+<td>Zero or one of a</td>
+</tr>
+<tr>
+<td><code>a*</code></td>
+<td>Zero or more of a</td>
+</tr>
+<tr>
+<td><code>a+</code></td>
+<td>One or more of a</td>
+</tr>
+<tr>
+<td><code>a{3}</code></td>
+<td>Exactly 3 of a</td>
+</tr>
+<tr>
+<td><code>a{3,}</code></td>
+<td>3 or more of a</td>
+</tr>
+<tr>
+<td><code>a{3,6}</code></td>
+<td>Between 3 and 6 of a</td>
+</tr>
+</tbody></table>
+<div id="regex_options" style="text-align:center">
+<p>
+options:
+<code>i</code> case insensitive
+<code>m</code> make dot match newlines
+<code>x</code> ignore whitespace in regex
+<code>o</code> perform #{...} substitutions only once
+</p>
+</div>
+</div>
+<div id="birdseed" class="birdseed">
+<p>Rubular uses Ruby 2.5.3. Share questions/comments/issues <a href="http://twitter.com/rubular">@rubular</a>. Made by <a href="http://lovitt.net/">Michael Lovitt</a> <a href="http://twitter.com/lovitt">@lovitt</a>.</p>
+</div>
+</div>
+
+<div id="codefund"><div id="cf" style="font-family: Helvetica, Arial; font-size: 13px;"> <span class="cf-wrapper" style="box-sizing: border-box; position: fixed; bottom: 0; z-index: 5; width: 100%; border-top-width: 1px; border-top-color: #bfbfbf; border-top-style: solid; background-color: #eeeeee; text-align: center; line-height: 1.5; padding: 0.8em 1em 1em;"> <a data-href="campaign_url" class="cf-text" target="_blank" rel="nofollow noopener" style="box-shadow: none !important; color: inherit; text-decoration: none;" href="https://codefund.io/impressions/f19dafba-cd20-4eef-b69f-5a19eff3ba05/click?campaign_id=237"> <strong>New: DigitalOcean Marketplace</strong> <span>Deploy your favorite dev tools with 1-Click Apps</span> </a> <a href="https://codefund.io/invite/xp9Wa850yGY" data-target="powered_by_url" class="cf-powered-by" target="_blank" rel="nofollow noopener" style="box-shadow: none !important; font-size: 12px; text-decoration: none; color: #999;"> <em>ethical</em> ad by CodeFund <img data-src="impression_url" src="Rubular%20%20a%20Ruby%20regular%20expression%20editor_files/f19dafba-cd20-4eef-b69f-5a19eff3ba05.gif"> </a> </span> </div> <style>#cf .cf-text:before { margin-right: 4px; padding: 2px 6px; border-radius: 3px; background-color: #4caf50; color: #fff; content: "Supporter"; } #cf .cf-powered-by::before { content: " "; color: rgba(0, 0, 0, 0.3); display: inline-block; } </style></div>
+<script src="Rubular%20%20a%20Ruby%20regular%20expression%20editor_files/funder.js" async="async"></script>
+
+
+</body></html>
